@@ -26,6 +26,11 @@ $method = !empty($segments[1]) ? $segments[1] : 'index';
 // Construa o nome completo da classe com o namespace
 $full_class = $namespace . $class;
 
+echo $full_class;
+
+$orcamento = new Controllers\Orcamento();
+$orcamento->teste();
+
 // Verifique se a classe existe
 if (!class_exists($full_class)) erro_404("Classe não encontrada");
 

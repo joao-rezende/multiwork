@@ -25,6 +25,9 @@ $method = !empty($segments[1]) ? $segments[1] : 'index';
 
 use Controllers\Orcamento;
 
+$orcamento = new Orcamento();
+$orcamento->teste();
+
 // Verifique se a classe existe
 if (!class_exists($class)) erro_404("Classe não encontrada");
 

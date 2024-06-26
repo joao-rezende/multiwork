@@ -25,7 +25,7 @@ class Orcamento
         $mpdf->SetTitle("orcamento.pdf");
         $mpdf->WriteHTML($css, \Mpdf\HTMLParserMode::HEADER_CSS);
         $mpdf->WriteHTML($html, \Mpdf\HTMLParserMode::HTML_BODY);
-        $mpdf->SetWatermarkImage(DIR_RAIZ . "/assets/imgs/marca da agua.png", 0.6, 'P');
+        $mpdf->SetWatermarkImage(DIR_RAIZ . "/assets/imgs/marca da agua.png", 0.6);
         $mpdf->showWatermarkImage = true;
         $mpdf->Output("orcamento.pdf", \Mpdf\Output\Destination::INLINE);
     }

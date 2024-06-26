@@ -21,8 +21,8 @@ class Orcamento
             "margin_left" => 10,
             "margin_right" => 10
         ]);
-        
-        $mpdf->SetWatermarkImage(DIR_RAIZ . "/assets/imgs/marca da agua.png", 0.6);
+
+        $mpdf->SetWatermarkImage(DIR_RAIZ . "/assets/imgs/marca da agua.png", 0.6, "P");
         $mpdf->showWatermarkImage = true;
 
         $mpdf->SetTitle("orcamento.pdf");

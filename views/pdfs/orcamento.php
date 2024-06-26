@@ -72,12 +72,14 @@
         </tbody>
     </table>
 
-    <div id="observacoes">
-        <h4>Atenção</h4>
-        <?php foreach ($observacoes as $observacao) : ?>
-            <p><?= $observacao; ?></p>
-        <?php endforeach; ?>
-    </div>
+    <?php if (!empty($observacoes)) : ?>
+        <div id="observacoes">
+            <h4>Atenção</h4>
+            <?php foreach ($observacoes as $observacao) : ?>
+                <p><?= $observacao; ?></p>
+            <?php endforeach; ?>
+        </div>
+    <?php endif; ?>
 
     <table id="totais" class="lagura-100">
         <tr>
@@ -92,7 +94,7 @@
                 </h4>
 
                 <?php if (!empty($pagamento)) : ?>
-                    <?php foreach (explode("\n", $pagamento) as $dados_pagamento): ?>
+                    <?php foreach (explode("\n", $pagamento) as $dados_pagamento) : ?>
                         <p id="menor">
                             <?= $dados_pagamento; ?>
                         </p>

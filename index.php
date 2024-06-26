@@ -1,4 +1,6 @@
 <?php
+ini_set('memory_limit', '-1');
+
 require_once "config.php";
 require_once 'constants.php';
 require_once 'vendor/autoload.php';

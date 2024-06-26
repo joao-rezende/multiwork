@@ -22,8 +22,9 @@ class Orcamento
             "margin_right" => 10
         ]);
 
-        $mpdf->SetWatermarkImage(DIR_RAIZ . "/assets/imgs/marca da agua.png", 0.6, "P");
-        $mpdf->showWatermarkImage = true;
+        // Defina a marca d'água como uma imagem de fundo
+        $mpdf->SetDefaultBodyCSS('background', "url('assets/imgs/marca_da_agua.png')");
+        $mpdf->SetDefaultBodyCSS('background-image-resize', 6);
 
         $mpdf->SetTitle("orcamento.pdf");
         $mpdf->WriteHTML($css, \Mpdf\HTMLParserMode::HEADER_CSS);

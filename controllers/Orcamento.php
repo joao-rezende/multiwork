@@ -27,8 +27,4 @@ class Orcamento
         $mpdf->WriteHTML($html, \Mpdf\HTMLParserMode::HTML_BODY);
         $mpdf->Output("orcamento.pdf", \Mpdf\Output\Destination::INLINE);
     }
-
-    public function teste() {
-        echo "Hello World\n";
-    }
 }

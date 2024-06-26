@@ -23,19 +23,12 @@ $namespace = 'Controllers\\';
 $class = !empty($segments[0]) ? ucfirst($segments[0]) : 'Orcamento';
 $method = !empty($segments[1]) ? $segments[1] : 'index';
 
-// Construa o nome completo da classe com o namespace
-$full_class = $namespace . $class;
-$full_class = 'Controllers\\Orcamento';
-
-echo $full_class;
-
-$orcamento = new $full_class();
-$orcamento->teste();
+use Controllers\Orcamento;
 
 // Verifique se a classe existe
-if (!class_exists($full_class)) erro_404("Classe não encontrada");
+if (!class_exists($class)) erro_404("Classe não encontrada");
 
-$controller = new $full_class();
+$controller = new $class();
 // Verifique se o método existe na classe
 if (!method_exists($controller, $method)) erro_404("Método não encontrada");
 

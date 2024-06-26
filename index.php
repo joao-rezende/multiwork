@@ -28,7 +28,7 @@ $full_class = $namespace . $class;
 
 echo $full_class;
 
-$orcamento = new Controllers\Orcamento();
+$orcamento = new $full_class();
 $orcamento->teste();
 
 // Verifique se a classe existe

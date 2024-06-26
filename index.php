@@ -25,6 +25,7 @@ $method = !empty($segments[1]) ? $segments[1] : 'index';
 
 // Construa o nome completo da classe com o namespace
 $full_class = $namespace . $class;
+$full_class = 'Controllers\\Orcamento';
 
 echo $full_class;
 

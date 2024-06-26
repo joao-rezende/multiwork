@@ -1,6 +1,5 @@
 <?php
 require_once "config.php";
-require_once 'autoload.php';
 require_once 'constants.php';
 require_once 'vendor/autoload.php';
 require_once 'helpers/app.php';
@@ -23,15 +22,13 @@ $namespace = 'Controllers\\';
 $class = !empty($segments[0]) ? ucfirst($segments[0]) : 'Orcamento';
 $method = !empty($segments[1]) ? $segments[1] : 'index';
 
-use Controllers\Orcamento;
-
-$orcamento = new Orcamento();
-$orcamento->teste();
+// Construa o nome completo da classe com o namespace
+$full_class = $namespace . $class;
 
 // Verifique se a classe existe
-if (!class_exists($class)) erro_404("Classe não encontrada");
+if (!class_exists($full_class)) erro_404("Classe não encontrada");
 
-$controller = new $class();
+$controller = new $full_class();
 // Verifique se o método existe na classe
 if (!method_exists($controller, $method)) erro_404("Método não encontrada");
 

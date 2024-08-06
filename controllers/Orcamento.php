@@ -13,6 +13,7 @@ class Orcamento
     {
         if (empty($_POST)) return header('Location: ' . SITE_URL . "/orcamento");
 
+        ini_set('memory_limit', '512M');
         ini_set('max_execution_time', '600');
 
         $css = file_get_contents(DIR_RAIZ . "/assets/css/pdfs/orcamento.css");
@@ -32,6 +33,10 @@ class Orcamento
         $mpdf->WriteHTML($css, \Mpdf\HTMLParserMode::HEADER_CSS);
         $mpdf->WriteHTML($html, \Mpdf\HTMLParserMode::HTML_BODY);
         $mpdf->SetHTMLFooter('<div style="text-align: center;"><img src="' . DIR_RAIZ . '/assets/imgs/rodape_pdf.png" /></div>');
+
+        // Limpar o buffer de saída
+        ob_end_clean();
+
         $mpdf->Output("orcamento.pdf", \Mpdf\Output\Destination::DOWNLOAD);
     }
 }

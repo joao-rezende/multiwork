@@ -13,6 +13,8 @@ class Orcamento
     {
         if (empty($_POST)) return header('Location: ' . SITE_URL . "/orcamento");
 
+        ini_set('max_execution_time', '600');
+
         $css = file_get_contents(DIR_RAIZ . "/assets/css/pdfs/orcamento.css");
         $html = view("pdfs/orcamento", $_POST, TRUE);
 

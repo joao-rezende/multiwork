@@ -1,4 +1,5 @@
 <?php
+ob_start();
 
 namespace Controllers;
 
@@ -37,6 +38,6 @@ class Orcamento
         // Limpar o buffer de saída
         ob_end_clean();
 
-        $mpdf->Output("orcamento.pdf", \Mpdf\Output\Destination::DOWNLOAD);
+        $mpdf->Output("orcamento.pdf", \Mpdf\Output\Destination::INLINE);
     }
 }

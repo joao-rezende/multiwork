@@ -1,7 +1,8 @@
 <?php
-ob_start();
 
 namespace Controllers;
+
+ob_start();
 
 class Orcamento
 {
